@@ -7,7 +7,7 @@ import string
 import numpy as np
 import cohere
 from numpy.linalg import norm
-from PyPDF2 import PdfFileReader
+from PyPDF2 import PdfReader
 import streamlit as st
 
 
@@ -42,7 +42,7 @@ def process_text_input(text: str, run_id: str = None):
     return df, run_id, output_path, len(df)
 
 def read_pdf(pdffile) : 
-    pdfReader = PdfFileReader(pdffile)
+    pdfReader = PdfReader(pdffile)
     count = pdfReader.numPages
     all_pages = ""
     for pagenum in range(count) :
