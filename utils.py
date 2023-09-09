@@ -46,7 +46,7 @@ def read_pdf(pdffile) :
     count = len(pdfReader.pages)
     all_pages = ""
     for pagenum in range(count) :
-        page = pdfReader.pages(pagenum)
+        page = pdfReader.pages[pagenum]
         all_pages += page.extract_text() 
     
     return all_pages
