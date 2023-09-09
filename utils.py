@@ -44,6 +44,7 @@ def process_text_input(text: str, run_id: str = None):
 def read_pdf(pdffile) : 
     pdfReader = PdfReader(pdffile)
     count = pdfReader.numPages
+    count = len(pdfReader.pages)
     all_pages = ""
     for pagenum in range(count) :
         page = pdfReader.getPage(pagenum)
